@@ -2,7 +2,6 @@ package com.kaushik.AlgorithmUtilityApp;
 import java.util.ArrayList;
 import java.util.List;
 import org.apache.log4j.Logger;
-import org.apache.log4j.spi.LoggerFactory;
 
 import com.kaushik.AlgorithmUtility.entities.Node;
 import com.kaushik.AlgorithmUtility.entities.TreeProcessingException;
@@ -28,8 +27,6 @@ public class BinarySearchTree implements Tree {
 	public void setRoot(Node root) {
 		this.root = root;
 	}
-
-	
 	
 	public BinarySearchTree(){
 		root = null;
@@ -62,10 +59,11 @@ public class BinarySearchTree implements Tree {
 		}
 	}
 	
-	private void insertNode(Node root,Node n){
+	public void insertNode(Node root,Node n){
 		if (n.getValue() < root.getValue()){
 			 if (root.getLeftChild() == null){
 				 root.setLeftChild(n);
+				 n.setParent(root);
 			 }
 			 else{
 				 insertNode(root.getLeftChild(), n);
@@ -74,11 +72,91 @@ public class BinarySearchTree implements Tree {
 		else if (n.getValue() > root.getValue()){
 			if (root.getRightChild() == null){
 				root.setRightChild(n);
+				n.setParent(root);
 			}
 			else{
 				insertNode(root.getRightChild(), n);
 			}
 		}
+	}
+	
+	public Node successorOf(Node n){
+		Node nodeInTree = getReferenceToElement(root, n);
+		
+		if (nodeInTree != null){
+			
+			if (nodeInTree.getRightChild() != null){
+				return nodeInTree.getRightChild();
+			}
+			
+			
+			if (nodeIsLeftChildOfParent(nodeInTree)){
+				return nodeInTree.getParent();
+			}
+			
+			if (nodeIsRightChildOfParent(nodeInTree)){
+				return successorIfParentIsItsParentsLeftChild(nodeInTree);
+			}
+			
+			
+		}
+		return null;
+	}
+	
+	private boolean nodeIsLeftChildOfParent(Node n){
+		boolean isLeftChild = false;
+		Node parent = n.getParent();
+		if (parent != null && parent.getLeftChild() == n){
+			isLeftChild = true;
+		}
+		return isLeftChild;
+	}
+	
+	private boolean nodeIsRightChildOfParent(Node n){
+		boolean isRightChild = false;
+		Node parent = n.getParent();
+		if (parent != null && parent.getRightChild() == n){
+			isRightChild = true;
+		}
+		return isRightChild;
+	}
+	
+	private Node successorIfParentIsItsParentsLeftChild(Node n){
+		Node parent = n.getParent();
+		if (parent == null){
+			return null;
+		}
+		Node parentsParent = parent.getParent();
+		if (parentsParent == null){
+			return null;
+		}
+		while (parentsParent.getLeftChild() != parent){
+				parent = parentsParent;
+				parentsParent = parent.getParent();
+		}
+		return parentsParent;
+	} 
+	
+	public Node getReferenceToElement(Node root,Node n){
+		Node n1 = null;
+		if (n.getValue() < root.getValue()){
+			root = root.getLeftChild();
+			if (root == null){
+				return null;
+			}
+			n1 = getReferenceToElement(root, n);
+		}
+		else if (n.getValue() > root.getValue()){
+			root = root.getRightChild();
+			if (root == null){
+				return null;
+			}
+			n1 = getReferenceToElement(root, n);
+		}
+		else{
+			n1 = root;
+		}
+		return n1;
 	}
 	
 	private List<Integer> toInteger(List<Node> sortedList){

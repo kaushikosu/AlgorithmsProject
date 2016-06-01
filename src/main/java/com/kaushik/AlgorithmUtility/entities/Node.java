@@ -8,6 +8,13 @@ public class Node {
 	private Node rightChild;
 	private Node parent;
 	
+	public Node(int value) {
+		super();
+		this.value = value;
+	}
+	public Node() {
+		// TODO Auto-generated constructor stub
+	}
 	public Node getLeftChild() {
 		return leftChild;
 	}
