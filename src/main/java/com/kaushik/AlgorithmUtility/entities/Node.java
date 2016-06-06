@@ -1,50 +1,36 @@
 package com.kaushik.AlgorithmUtility.entities;
 
-public class Node {
+import java.util.ArrayList;
+import java.util.List;
+
+public class Node<T> {
 	
-	private int value;
-	private String name;
-	private Node leftChild;
-	private Node rightChild;
-	private Node parent;
+	private int numberOfChildren;
 	
-	public Node(int value) {
-		super();
-		this.value = value;
-	}
-	public Node() {
-		// TODO Auto-generated constructor stub
-	}
-	public Node getLeftChild() {
-		return leftChild;
-	}
-	public void setLeftChild(Node leftChild) {
-		this.leftChild = leftChild;
-	}
-	public Node getRightChild() {
-		return rightChild;
-	}
-	public void setRightChild(Node rightChild) {
-		this.rightChild = rightChild;
-	}
-	public Node getParent() {
+	private List<T> children;
+	private T parent;
+	
+	public T getParent() {
 		return parent;
 	}
-	public void setParent(Node parent) {
+
+	public void setParent(T parent) {
 		this.parent = parent;
 	}
-	public int getValue() {
-		return value;
+
+	public int getNumberOfChildren() {
+		return numberOfChildren;
 	}
-	public void setValue(int value) {
-		this.value = value;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
+
+	public void setNumberOfChildren(int numberOfChildren) {
+		this.numberOfChildren = numberOfChildren;
 	}
 	
-	
+	protected void addChild(T n){
+		children.add(n);
+	}
+
+	public Node(){
+		children = new ArrayList<T>();
+	}
 }
