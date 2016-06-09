@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import com.kaushik.AlgorithmUtility.entities.BSTNode;
+import com.kaushik.AlgorithmUtility.entities.RTNode;
 import com.kaushik.AlgorithmUtility.entities.TreeProcessingException;
 
 public class driverClass {
@@ -16,6 +17,12 @@ public class driverClass {
 		bst.buildBinarySearchTree(inputList);
 		BSTNode n = new BSTNode(12);
 		System.out.println("successor of two is "+ bst.successorOf(n).getValue());
+		
+		
+		RTNode n1 = new RTNode("a");
+		RTNode n2 = new RTNode("b");
+		
+		//System.out.println("comparator on n1 and n2 is "+ n1n2);
 		try{
 		
 		}
