@@ -4,7 +4,7 @@ import java.util.List;
 import org.apache.log4j.Logger;
 
 import com.kaushik.AlgorithmUtility.entities.BSTNode;
-import com.kaushik.AlgorithmUtility.entities.Node;
+import com.kaushik.AlgorithmUtility.entities.GenericTreeNode;
 import com.kaushik.AlgorithmUtility.entities.TreeProcessingException;
 
 public class BinarySearchTree implements Tree {
@@ -116,7 +116,7 @@ public class BinarySearchTree implements Tree {
 	}
 	
 	public void deleteBSTNode(BSTNode n){
-		Node<BSTNode> BSTNodeInTree = getReferenceToElement(root, n);
+		GenericTreeNode<BSTNode> BSTNodeInTree = getReferenceToElement(root, n);
 		
 	}
 	

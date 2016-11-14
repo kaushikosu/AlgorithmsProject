@@ -2,7 +2,7 @@ package com.kaushik.AlgorithmUtility.entities;
 
 import java.util.Comparator;
 
-public class RTNode extends Node<RTNode> implements Comparator<RTNode>{
+public class RTNode extends GenericTreeNode<RTNode> implements Comparator<RTNode>{
 
 	private String value;
 

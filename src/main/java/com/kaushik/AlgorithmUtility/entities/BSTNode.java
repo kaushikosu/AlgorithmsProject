@@ -1,6 +1,6 @@
 package com.kaushik.AlgorithmUtility.entities;
 
-public class BSTNode extends Node<BSTNode>{
+public class BSTNode extends GenericTreeNode<BSTNode>{
 	
 	private int value;
 	private String name;
