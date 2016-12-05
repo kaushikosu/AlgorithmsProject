@@ -11,9 +11,9 @@ public class BinarySearchTree implements Tree {
 		
 	int noOfBSTNodes;
 	
-	BSTNode root;
+	BSTNode<Integer> root;
 	
-	List<BSTNode> sortedList = new ArrayList<BSTNode>();
+	List<BSTNode<Integer>> sortedList = new ArrayList<BSTNode<Integer>>();
 	
 	public static final Logger logger = Logger.getLogger(BinarySearchTree.class);
 	
@@ -60,7 +60,7 @@ public class BinarySearchTree implements Tree {
 		}
 	}
 	
-	public void insertBSTNode(BSTNode root,BSTNode n){
+	public void insertBSTNode(BSTNode<Integer> root,BSTNode<Integer> n){
 		incrementNumberOfNodes();
 		if (n.getValue() < root.getValue()){
 			 if (root.getLeftChild() == null){
@@ -115,8 +115,8 @@ public class BinarySearchTree implements Tree {
 		return minOfTreeRootedAt(leftChildOfN);
 	}
 	
-	public void deleteBSTNode(BSTNode n){
-		GenericTreeNode<BSTNode> BSTNodeInTree = getReferenceToElement(root, n);
+	public void deleteBSTNode(BSTNode<Integer> n){
+		GenericTreeNode<BSTNode<Integer>> BSTNodeInTree = getReferenceToElement(root, n);
 		
 	}
 	
@@ -154,8 +154,8 @@ public class BinarySearchTree implements Tree {
 		return parentsParent;
 	} 
 	
-	public BSTNode getReferenceToElement(BSTNode root,BSTNode n){
-		BSTNode n1 = null;
+	public BSTNode<Integer> getReferenceToElement(BSTNode<Integer> root,BSTNode<Integer> n){
+		BSTNode<Integer> n1 = null;
 		if (n.getValue() < root.getValue()){
 			root = root.getLeftChild();
 			if (root == null){
@@ -176,9 +176,9 @@ public class BinarySearchTree implements Tree {
 		return n1;
 	}
 	
-	private List<Integer> toInteger(List<BSTNode> sortedList){
+	private List<Integer> toInteger(List<BSTNode<Integer>> sortedList){
 		List<Integer> integerList = new ArrayList<Integer>();
-		for(BSTNode n: sortedList){
+		for(BSTNode<Integer> n: sortedList){
 			integerList.add(n.getValue());
 		}
 		return integerList;

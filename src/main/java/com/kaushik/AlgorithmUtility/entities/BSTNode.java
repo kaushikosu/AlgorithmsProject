@@ -1,42 +1,42 @@
 package com.kaushik.AlgorithmUtility.entities;
 
-public class BSTNode extends GenericTreeNode<BSTNode>{
+public class BSTNode<T> extends GenericTreeNode<BSTNode<T>>{
 	
-	private int value;
+	private T value;
 	private String name;
-	private BSTNode leftChild;
-	private BSTNode rightChild;
-	private BSTNode parent;
+	private BSTNode<T> leftChild;
+	private BSTNode<T> rightChild;
+	private BSTNode<T> parent;
 	
-	public BSTNode(int value) {
+	public BSTNode(T value) {
 		super();
 		this.value = value;
 	}
 	public BSTNode() {
 		// TODO Auto-generated constructor stub
 	}
-	public BSTNode getLeftChild() {
+	public BSTNode<T> getLeftChild() {
 		return leftChild;
 	}
-	public void setLeftChild(BSTNode leftChild) {
+	public void setLeftChild(BSTNode<T> leftChild) {
 		this.leftChild = leftChild;
 	}
-	public BSTNode getRightChild() {
+	public BSTNode<T> getRightChild() {
 		return rightChild;
 	}
-	public void setRightChild(BSTNode rightChild) {
+	public void setRightChild(BSTNode<T> rightChild) {
 		this.rightChild = rightChild;
 	}
-	public BSTNode getParent() {
+	public BSTNode<T> getParent() {
 		return parent;
 	}
-	public void setParent(BSTNode parent) {
+	public void setParent(BSTNode<T> parent) {
 		this.parent = parent;
 	}
-	public int getValue() {
+	public T getValue() {
 		return value;
 	}
-	public void setValue(int value) {
+	public void setValue(T value) {
 		this.value = value;
 	}
 	public String getName() {
