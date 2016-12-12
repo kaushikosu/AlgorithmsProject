@@ -3,7 +3,7 @@ package com.kaushik.AlgorithmUtility.entities;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GenericTreeNode<T> {
+public class GenericTreeNode<T> extends GenericGraphNode<T>{
 	
 	public GenericTreeNode() {
 		super();
