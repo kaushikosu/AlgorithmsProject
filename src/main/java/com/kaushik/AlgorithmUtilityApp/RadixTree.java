@@ -7,6 +7,7 @@ import java.util.List;
 import org.apache.log4j.Logger;
 
 import com.kaushik.AlgorithmUtility.entities.RTEdge;
+import com.kaushik.AlgorithmUtility.entities.RTEdgeSort;
 import com.kaushik.AlgorithmUtility.entities.RTNode;
 
 public class RadixTree implements Tree {
@@ -47,6 +48,7 @@ public class RadixTree implements Tree {
 			String destinationNodeValue = rootOfLastInsert.getValue() + c;
 			RTNode destination = new RTNode(destinationNodeValue);
 			rootOfLastInsert.addEdge(destination,c);
+			Collections.sort(rootOfLastInsert.getEdges(),new RTEdgeSort());
 			System.out.println("added edge with weight "+c);
 			rootOfLastInsert = destination;
 		}
