@@ -35,6 +35,9 @@ public class LinkedListAlgos {
 						LinkedlistNode<Integer> p3 = p2.getNext();
 						while(p3.getData() == p1.getData()){
 							p3 = p3.getNext();
+							if (p3 == null){
+								break;
+							}
 						}
 						p2.setNext(p3);
 					}
