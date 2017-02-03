@@ -32,7 +32,11 @@ public class LinkedListAlgos {
 				}
 				else{
 					if (p2.getNext().getData().equals(p1.getData())){
-						p2.setNext(p2.getNext().getNext());
+						LinkedlistNode<Integer> p3 = p2.getNext();
+						while(p3.getData() == p1.getData()){
+							p3 = p3.getNext();
+						}
+						p2.setNext(p3);
 					}
 				}
 				p2 = p2.getNext();
