@@ -48,6 +48,33 @@ public class LinkedListAlgos {
 		}
 	}
 	
+	public void removeMiddleNode(LinkedlistNode<Integer> head){
+		LinkedlistNode<Integer> p1 = head;
+		LinkedlistNode<Integer> prevP1 = null;
+		LinkedlistNode<Integer> p2 = null;
+		if (head.getNext() != null){
+			p2 = p1.getNext();
+			if (p2.getNext() == null){
+				p1.setNext(null);
+				return;
+			}
+		}
+		else{
+			return;
+		}
+		while(p2.getNext()!= null && p2.getNext().getNext() != null){
+			prevP1 = p1;
+			p1 = p1.getNext();
+			p2 = p2.getNext().getNext();
+		}
+		if (p2.getNext() == null){
+			prevP1.setNext(prevP1.getNext().getNext());
+		}
+		else if (p2.getNext().getNext() == null){
+			p1.setNext(p1.getNext().getNext());
+		}
+	}
+	
 	public void printLinkedList(LinkedlistNode<Integer> head){
 		System.out.print("[");
 		while(head != null){
