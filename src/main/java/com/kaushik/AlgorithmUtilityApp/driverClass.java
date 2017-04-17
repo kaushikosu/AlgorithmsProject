@@ -1,12 +1,12 @@
-package com.kaushik.AlgorithmUtilityApp;
+package com.kaushik.algorithmutilityapp;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import com.kaushik.AlgorithmUtility.entities.BSTNode;
-import com.kaushik.AlgorithmUtility.entities.RTNode;
-import com.kaushik.AlgorithmUtility.entities.TreeProcessingException;
+import com.kaushik.algorithmutility.entities.BSTNode;
+import com.kaushik.algorithmutility.entities.RTNode;
+import com.kaushik.algorithmutility.entities.TreeProcessingException;
 
 public class driverClass {
 

@@ -1,4 +1,4 @@
-package com.kaushik.AlgorithmUtility.sorting;
+package com.kaushik.algorithmutility.sorting;
 
 import java.util.ArrayList;
 import java.util.List;

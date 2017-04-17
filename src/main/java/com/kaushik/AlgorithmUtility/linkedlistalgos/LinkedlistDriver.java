@@ -1,6 +1,6 @@
-package com.kaushik.AlgorithmUtility.linkedlistalgos;
+package com.kaushik.algorithmutility.linkedlistalgos;
 
-import com.kaushik.AlgorithmUtility.entities.LinkedlistNode;
+import com.kaushik.algorithmutility.entities.LinkedlistNode;
 
 public class LinkedlistDriver {
 		

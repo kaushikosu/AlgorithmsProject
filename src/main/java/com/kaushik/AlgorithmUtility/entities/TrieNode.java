@@ -1,8 +1,8 @@
-package com.kaushik.AlgorithmUtility.entities;
+package com.kaushik.algorithmutility.entities;
 
 import java.util.Comparator;
 
-public class TrieNode extends GenericTreeNode<TrieNode>{
+public class TrieNode extends GenericTreeNode<TrieNode,String>{
 	
 	private boolean endingLetter;
 	

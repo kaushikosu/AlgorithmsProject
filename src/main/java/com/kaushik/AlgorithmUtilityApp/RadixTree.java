@@ -1,4 +1,4 @@
-package com.kaushik.AlgorithmUtilityApp;
+package com.kaushik.algorithmutilityapp;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -6,9 +6,9 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 
-import com.kaushik.AlgorithmUtility.entities.RTEdge;
-import com.kaushik.AlgorithmUtility.entities.RTEdgeSort;
-import com.kaushik.AlgorithmUtility.entities.RTNode;
+import com.kaushik.algorithmutility.entities.RTEdge;
+import com.kaushik.algorithmutility.entities.RTEdgeSort;
+import com.kaushik.algorithmutility.entities.RTNode;
 
 public class RadixTree implements Tree {
 	

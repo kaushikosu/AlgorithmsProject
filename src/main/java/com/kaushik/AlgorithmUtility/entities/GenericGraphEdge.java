@@ -1,31 +1,29 @@
-package com.kaushik.AlgorithmUtility.entities;
+package com.kaushik.algorithmutility.entities;
 
 public class GenericGraphEdge<T,X> {
-
 	
-	private GenericGraphNode<X> source;
-	private GenericGraphNode<X> destination;
-	private T edgeWeight;
+	private T source;
+	private T destination;
+	private X edgeWeight;
 	
-	public GenericGraphNode<X> getSource() {
+	public T getSource() {
 		return source;
 	}
-	public void setSource(GenericGraphNode<X> source) {
+	public void setSource(T source) {
 		this.source = source;
 	}
-	public GenericGraphNode<X> getDestination() {
+	public T getDestination() {
 		return destination;
 	}
-	public void setDestination(GenericGraphNode<X> destination) {
+	public void setDestination(T destination) {
 		this.destination = destination;
 	}
-	public T getEdgeWeight() {
+	public X getEdgeWeight() {
 		return edgeWeight;
 	}
-	public void setEdgeWeight(T edgeWeight) {
+	public void setEdgeWeight(X edgeWeight) {
 		this.edgeWeight = edgeWeight;
 	}
-	
 	
 	
 	

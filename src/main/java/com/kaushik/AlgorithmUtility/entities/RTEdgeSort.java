@@ -1,4 +1,4 @@
-package com.kaushik.AlgorithmUtility.entities;
+package com.kaushik.algorithmutility.entities;
 
 import java.util.Comparator;
 

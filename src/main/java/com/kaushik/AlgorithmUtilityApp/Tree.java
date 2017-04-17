@@ -1,4 +1,4 @@
-package com.kaushik.AlgorithmUtilityApp;
+package com.kaushik.algorithmutilityapp;
 
 public interface Tree {
 		

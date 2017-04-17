@@ -1,10 +1,10 @@
-package com.kaushik.AlgorithmUtility.entities;
+package com.kaushik.algorithmutility.entities;
 
-public class RTEdge extends GenericGraphEdge<Character,String> {
+public class RTEdge extends GenericGraphEdge<RTNode,String> {
 	
 	public RTEdge(Character edgeWeight){
 		super();
-		this.setEdgeWeight(edgeWeight);
+		this.setEdgeWeight(""+edgeWeight);
 	}
 	
 	public boolean equals(Object o){

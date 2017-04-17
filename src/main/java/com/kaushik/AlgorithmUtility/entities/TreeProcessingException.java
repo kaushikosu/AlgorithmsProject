@@ -1,4 +1,4 @@
-package com.kaushik.AlgorithmUtility.entities;
+package com.kaushik.algorithmutility.entities;
 
 public class TreeProcessingException extends RuntimeException {
 	

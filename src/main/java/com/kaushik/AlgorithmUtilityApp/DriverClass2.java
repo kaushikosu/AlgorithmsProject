@@ -1,6 +1,6 @@
-package com.kaushik.AlgorithmUtilityApp;
+package com.kaushik.algorithmutilityapp;
 
-import com.kaushik.AlgorithmUtility.entities.RTNode;
+import com.kaushik.algorithmutility.entities.RTNode;
 
 public class DriverClass2 {
 	public static  void main(String [] args) {	

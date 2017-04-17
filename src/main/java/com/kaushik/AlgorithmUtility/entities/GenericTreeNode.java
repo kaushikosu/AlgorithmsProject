@@ -1,17 +1,21 @@
-package com.kaushik.AlgorithmUtility.entities;
+package com.kaushik.algorithmutility.entities;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class GenericTreeNode<T> extends GenericGraphNode<T>{
+public class GenericTreeNode<T,X> extends GenericGraphNode<T,X>{
 	
 	public GenericTreeNode() {
-		super();
-		this.children =  new ArrayList<GenericTreeNode<T>>();
+		this.children =  new ArrayList<T>();
+	}
+	
+	public GenericTreeNode(X value){
+		super(value);
+		this.children =  new ArrayList<T>();
 	}
 
-	private List<GenericTreeNode<T>> children;
-	private GenericTreeNode<T> parent;
+	private List<T> children;
+	private T parent;
 	
 	private T data;
 	
@@ -23,11 +27,11 @@ public class GenericTreeNode<T> extends GenericGraphNode<T>{
 		this.data = data;
 	}
 
-	public GenericTreeNode<T> getParent() {
+	public T getParent() {
 		return parent;
 	}
 
-	public void setParent(GenericTreeNode<T> parent) {
+	public void setParent(T parent) {
 		this.parent = parent;
 	}
 
@@ -35,11 +39,11 @@ public class GenericTreeNode<T> extends GenericGraphNode<T>{
 		return children.size();
 	}
 	
-	public void addChild(GenericTreeNode<T> n){
+	public void addChild(T n){
 		children.add(n);
 	}
 	
-	public List<GenericTreeNode<T>> getChildren(){
+	public List<T> getChildren(){
 		return children;
 	}
 }

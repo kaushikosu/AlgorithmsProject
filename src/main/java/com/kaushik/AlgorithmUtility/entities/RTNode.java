@@ -1,10 +1,10 @@
-package com.kaushik.AlgorithmUtility.entities;
+package com.kaushik.algorithmutility.entities;
 
 import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 
-public class RTNode extends GenericTreeNode<String> implements Comparator<RTNode>,Comparable<RTNode>{
+public class RTNode extends GenericTreeNode<RTNode,String> implements Comparator<RTNode>,Comparable<RTNode>{
 
 	private String value;
 	

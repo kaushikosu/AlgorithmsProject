@@ -1,11 +1,11 @@
-package com.kaushik.AlgorithmUtilityApp;
+package com.kaushik.algorithmutilityapp;
 import java.util.ArrayList;
 import java.util.List;
 import org.apache.log4j.Logger;
 
-import com.kaushik.AlgorithmUtility.entities.BSTNode;
-import com.kaushik.AlgorithmUtility.entities.GenericTreeNode;
-import com.kaushik.AlgorithmUtility.entities.TreeProcessingException;
+import com.kaushik.algorithmutility.entities.BSTNode;
+import com.kaushik.algorithmutility.entities.GenericTreeNode;
+import com.kaushik.algorithmutility.entities.TreeProcessingException;
 
 public class BinarySearchTree implements Tree {
 		
@@ -21,11 +21,11 @@ public class BinarySearchTree implements Tree {
 		return noOfBSTNodes;
 	}
 
-	public BSTNode getRoot() {
+	public BSTNode<Integer> getRoot() {
 		return root;
 	}
 
-	public void setRoot(BSTNode root) {
+	public void setRoot(BSTNode<Integer> root) {
 		this.root = root;
 	}
 	
@@ -35,27 +35,27 @@ public class BinarySearchTree implements Tree {
 	}
 	
 	public void buildBinarySearchTree(List<Integer> inputList){
-		List<BSTNode> inputBSTNodes = createBSTNodesForInputList(inputList);
+		List<BSTNode<Integer>> inputBSTNodes = createBSTNodesForInputList(inputList);
 		setRootAndPopulateTheTree(inputBSTNodes);
 	}
 	
-	private List<BSTNode> createBSTNodesForInputList(List<Integer> inputList){
-		List<BSTNode> BSTNodeListForInput = new ArrayList<BSTNode>();
+	private List<BSTNode<Integer>> createBSTNodesForInputList(List<Integer> inputList){
+		List<BSTNode<Integer>> BSTNodeListForInput = new ArrayList<BSTNode<Integer>>();
 		for (int value:inputList){
-			BSTNode n = new BSTNode();
+			BSTNode<Integer> n = new BSTNode<Integer>();
 			n.setValue(value);
 			BSTNodeListForInput.add(n);
 		}
 		return BSTNodeListForInput;
 	}
 	
-	private void setRootAndPopulateTheTree(List<BSTNode> inputBSTNodes){
+	private void setRootAndPopulateTheTree(List<BSTNode<Integer>> inputBSTNodes){
 		setRoot(inputBSTNodes.get(0));
 		populateTheTree(getRoot(),inputBSTNodes.subList(1, inputBSTNodes.size()));
 	}
 	
-	private void populateTheTree(BSTNode root,List<BSTNode> inputBSTNodes){
-		for (BSTNode n: inputBSTNodes){
+	private void populateTheTree(BSTNode<Integer> root,List<BSTNode<Integer>> inputBSTNodes){
+		for (BSTNode<Integer> n: inputBSTNodes){
 			insertBSTNode(root,n);
 		}
 	}
@@ -86,8 +86,8 @@ public class BinarySearchTree implements Tree {
 		noOfBSTNodes += 1;
 	}
 	
-	public BSTNode successorOf(BSTNode n) {
-		BSTNode BSTNodeInTree = getReferenceToElement(root, n);
+	public BSTNode<Integer> successorOf(BSTNode<Integer> n) {
+		BSTNode<Integer> BSTNodeInTree = getReferenceToElement(root, n);
 
 		if (BSTNodeInTree != null) {
 
@@ -107,8 +107,8 @@ public class BinarySearchTree implements Tree {
 		return null;
 	}
 	
-	public BSTNode minOfTreeRootedAt(BSTNode n){
-		BSTNode leftChildOfN = n.getLeftChild();
+	public BSTNode<Integer> minOfTreeRootedAt(BSTNode<Integer> n){
+		BSTNode<Integer> leftChildOfN = n.getLeftChild();
 		if (leftChildOfN == null){
 			return n;
 		}
@@ -116,34 +116,35 @@ public class BinarySearchTree implements Tree {
 	}
 	
 	public void deleteBSTNode(BSTNode<Integer> n){
-		GenericTreeNode<BSTNode<Integer>> BSTNodeInTree = getReferenceToElement(root, n);
+		//TODO: Incomplete code, revisit later.
+		BSTNode<Integer> BSTNodeInTree = getReferenceToElement(root, n);
 		
 	}
 	
-	private boolean BSTNodeIsLeftChildOfParent(BSTNode n){
+	private boolean BSTNodeIsLeftChildOfParent(BSTNode<Integer> n){
 		boolean isLeftChild = false;
-		BSTNode parent = n.getParent();
+		BSTNode<Integer> parent = n.getParent();
 		if (parent != null && parent.getLeftChild() == n){
 			isLeftChild = true;
 		}
 		return isLeftChild;
 	}
 	
-	private boolean BSTNodeIsRightChildOfParent(BSTNode n){
+	private boolean BSTNodeIsRightChildOfParent(BSTNode<Integer> n){
 		boolean isRightChild = false;
-		BSTNode parent = n.getParent();
+		BSTNode<Integer> parent = n.getParent();
 		if (parent != null && parent.getRightChild() == n){
 			isRightChild = true;
 		}
 		return isRightChild;
 	}
 	
-	private BSTNode successorIfParentIsItsParentsLeftChild(BSTNode n){
-		BSTNode parent = n.getParent();
+	private BSTNode<Integer> successorIfParentIsItsParentsLeftChild(BSTNode<Integer> n){
+		BSTNode<Integer> parent = n.getParent();
 		if (parent == null){
 			return null;
 		}
-		BSTNode parentsParent = parent.getParent();
+		BSTNode<Integer> parentsParent = parent.getParent();
 		if (parentsParent == null){
 			return null;
 		}
@@ -192,7 +193,7 @@ public class BinarySearchTree implements Tree {
 		return toInteger(sortedList);
 	}
 	
-	public void performInOrderTreeWalk(BSTNode root){
+	public void performInOrderTreeWalk(BSTNode<Integer> root){
 		if (root.getLeftChild() == null && root.getRightChild() == null){
 			sortedList.add(root);
 		}

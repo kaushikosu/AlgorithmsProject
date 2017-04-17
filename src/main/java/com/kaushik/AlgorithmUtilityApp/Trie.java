@@ -1,9 +1,9 @@
-package com.kaushik.AlgorithmUtilityApp;
+package com.kaushik.algorithmutilityapp;
 
 import java.util.ArrayList;
 
-import com.kaushik.AlgorithmUtility.entities.GenericTreeNode;
-import com.kaushik.AlgorithmUtility.entities.TrieNode;
+import com.kaushik.algorithmutility.entities.GenericTreeNode;
+import com.kaushik.algorithmutility.entities.TrieNode;
 
 public class Trie {
 
@@ -55,7 +55,7 @@ public class Trie {
 	}
 	
 	private void insertThisCharacterUnder(TrieNode root,TrieNode node){
-		for (GenericTreeNode<TrieNode> child: root.getChildren()){
+		for (TrieNode child: root.getChildren()){
 			if (child == node){
 				return;
 			}
