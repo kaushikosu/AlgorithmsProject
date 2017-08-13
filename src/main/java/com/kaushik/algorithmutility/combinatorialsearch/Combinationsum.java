@@ -10,7 +10,7 @@ class Combinationsum {
         taken = taken2;
         arr = arr2;
         for(Set<Integer> sumSet: combinationSum(0)){
-            System.out.println(sumSet + " ****");
+            System.out.println(sumSet);
         }
         System.out.println("Hello World!");
     }
