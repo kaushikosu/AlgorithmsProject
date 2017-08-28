@@ -12,9 +12,8 @@ class Combinationsum {
         for(Set<Integer> sumSet: combinationSum(0)){
             System.out.println(sumSet);
         }
-        System.out.println("Hello World!");
     }
-    
+
     private static Set<Set<Integer>> combinationSum(int target){
         Set<Set<Integer>> combinationSet = new HashSet<Set<Integer>>();
         for (int i = 0; i < arr.length; i++){
@@ -35,7 +34,7 @@ class Combinationsum {
                     if (!sumSet.isEmpty() && !combinationSet.contains(sumSet))
                     	combinationSet.addAll(sumSet);
                 }
-                
+
             }
             taken[i] = false;
         }
